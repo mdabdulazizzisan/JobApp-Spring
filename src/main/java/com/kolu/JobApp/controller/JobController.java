@@ -4,6 +4,7 @@ import com.kolu.JobApp.model.JobPost;
 import com.kolu.JobApp.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -28,5 +29,11 @@ public class JobController {
     public String handleForm(JobPost jobPost) {
         jobService.addJob(jobPost);
         return "success";
+    }
+
+    @GetMapping("/viewalljobs")
+    public String viewAllJobs(Model model) {
+        model.addAttribute("jobPosts", jobService.getAllJobs());
+        return "viewalljobs";
     }
 }
