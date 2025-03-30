@@ -4,9 +4,7 @@ import com.kolu.jobappbackend.model.JobPost;
 import com.kolu.jobappbackend.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
 @RestController
 public class JobRestController {
     @Autowired
@@ -17,7 +15,7 @@ public class JobRestController {
         return jobService.getAllJobs();
     }
 
-    @GetMapping("/jobPosts/{id}")
+    @GetMapping("/jobPost/{id}")
     public JobPost getJobPost(@PathVariable int id) {
         return jobService.getJob(id);
     }
@@ -26,5 +24,17 @@ public class JobRestController {
     public JobPost addJob(@RequestBody JobPost jobPost){
         jobService.addJob(jobPost);
         return jobService.getJob(jobPost.getPostId());
+    }
+
+    @PutMapping("/jobPost")
+    public JobPost updateJobPost(@RequestBody JobPost jobPost){
+        jobService.updateJobPost(jobPost);
+        return jobService.getJob(jobPost.getPostId());
+    }
+
+    @DeleteMapping("/jobPost/{jobId}")
+    public String deleteJobPost(@PathVariable int jobId){
+        jobService.deleteJob(jobId);
+        return "Deleted";
     }
 }

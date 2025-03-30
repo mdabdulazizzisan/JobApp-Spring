@@ -1,8 +1,8 @@
-### GET request to example server
+### GET all jobs
 GET localhost:8080/jobPosts
 
 ### GET job by ID
-GET localhost:8080/jobPosts/11
+GET localhost:8080/jobPost/11
 
 ### Post job
 POST localhost:8080/addJob
@@ -19,3 +19,22 @@ Content-Type: application/json
     "Hibernate"
   ]
 }
+
+### Update Job
+PUT localhost:8080/jobPost
+Content-Type: application/json
+
+{
+  "postId": 11,
+  "postProfile": "Modhu Developer",
+  "postDesc": "Develop server-side logic",
+  "reqExperience": 3,
+  "postTechStack": [
+    "Java",
+    "Spring",
+    "Hibernate"
+  ]
+}
+
+### Delete Job
+DELETE localhost:8080/jobPost/11
