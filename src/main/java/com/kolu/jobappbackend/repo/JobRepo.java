@@ -1,6 +1,7 @@
 package com.kolu.jobappbackend.repo;
 
-import com.kolu.JobApp.model.JobPost;
+
+import com.kolu.jobappbackend.model.JobPost;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

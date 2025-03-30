@@ -1,7 +1,8 @@
 package com.kolu.jobappbackend.service;
 
-import com.kolu.JobApp.model.JobPost;
-import com.kolu.JobApp.repo.JobRepo;
+
+import com.kolu.jobappbackend.model.JobPost;
+import com.kolu.jobappbackend.repo.JobRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
