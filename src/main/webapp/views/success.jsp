@@ -30,8 +30,6 @@
 </head>
 <body>
 
-<% JobPost jobPost = (JobPost) request.getAttribute("jobPost");%>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-clr">
     <div class="container">
         <a class="navbar-brand fs-1 fw-medium" href="#">Job Portal Web App</a>
