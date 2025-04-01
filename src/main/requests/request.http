@@ -7,6 +7,9 @@ GET localhost:8080/jobPosts
 ### GET job by ID
 GET localhost:8080/jobPost/11
 
+### GET job by keyword in title or description
+GET localhost:8080/jobPost/keyword/Software
+
 ### Post job
 POST localhost:8080/addJob
 Content-Type: application/json
