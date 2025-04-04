@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
+import java.util.Date;
 import java.util.Map;
 import java.util.function.Function;
 
@@ -24,6 +25,8 @@ public class JwtService {
                 .claims(extraClaims)
                 .subject(username)
                 .signWith(getKey())
+                .issuedAt(new Date(System.currentTimeMillis()))
+                .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 10)) // 10 minutes
                 .compact();
     }
 
