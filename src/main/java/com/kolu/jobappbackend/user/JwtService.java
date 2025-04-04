@@ -5,6 +5,8 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
@@ -55,5 +57,16 @@ public class JwtService {
     private SecretKey getKey() {
         byte[] keyBytes = Decoders.BASE64URL.decode(KEY);
         return Keys.hmacShaKeyFor(keyBytes);
+    }
+
+    public boolean isTokenExpired(String jwt) {
+        return extractExpiration(jwt).before(new Date());
+    }
+    private Date extractExpiration(String jwt) {
+        return extractClaim(jwt, Claims::getExpiration);
+    }
+    public boolean isTokenValid(String jwt, UserDetails userDetails) {
+        final String username = extractUsername(jwt);
+        return (username.equals(userDetails.getUsername()) && !isTokenExpired(jwt));
     }
 }
