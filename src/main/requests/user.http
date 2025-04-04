@@ -1,0 +1,41 @@
+### Register User
+POST localhost:8080/auth/user/register
+Content-Type: application/json
+
+{
+  "firstname": "John",
+  "lastname": "Doe",
+  "email": "john.doe@example.com",
+  "password": "securePassword123"
+}
+
+### Register User 2
+POST localhost:8080/auth/user/register
+Content-Type: application/json
+
+{
+  "firstname": "Kolu",
+  "lastname": "Molu",
+  "email": "Bangi.doe@modhu.com",
+  "password": "DeshiPassword123"
+}
+
+### Register User
+POST localhost:8080/auth/user/register
+Content-Type: application/json
+
+{
+  "firstname": "Zahin",
+  "lastname": "Hasan",
+  "email": "zisan123@gmail.com",
+  "password": "securePassword123"
+}
+
+### Login User
+POST localhost:8080/auth/user/login
+Content-Type: application/json
+
+{
+  "email": "john.doe@example.com",
+  "password": "securePassword123"
+}

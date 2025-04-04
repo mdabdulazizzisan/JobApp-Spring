@@ -2,10 +2,12 @@
 GET localhost:8080/loadJobs
 
 ### GET all jobs
-GET localhost:8080/jobPosts
+GET localhost:8080/jobPost/allJob
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Mzc3MjUyMywiZXhwIjoxNzQzNzczMTIzfQ.28IkZer3s7Ew_aWUcjahjG-Z-LXWja4lkr5aELum5wsuaaSEJRz61i9JmGoMkI34u3A7ZbHyP05VG4121mysgQ
 
 ### GET job by ID
-GET localhost:8080/jobPost/11
+GET localhost:8080/jobPost/6
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Mzc3MjUyMywiZXhwIjoxNzQzNzczMTIzfQ.28IkZer3s7Ew_aWUcjahjG-Z-LXWja4lkr5aELum5wsuaaSEJRz61i9JmGoMkI34u3A7ZbHyP05VG4121mysgQ
 
 ### GET job by keyword in title or description
 GET localhost:8080/jobPost/keyword/Software
