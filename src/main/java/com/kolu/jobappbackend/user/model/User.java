@@ -1,4 +1,4 @@
-package com.kolu.jobappbackend.user.userdetails;
+package com.kolu.jobappbackend.user.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

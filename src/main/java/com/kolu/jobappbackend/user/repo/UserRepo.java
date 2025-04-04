@@ -1,6 +1,6 @@
 package com.kolu.jobappbackend.user.repo;
 
-import com.kolu.jobappbackend.user.userdetails.User;
+import com.kolu.jobappbackend.user.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
