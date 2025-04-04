@@ -1,7 +1,7 @@
-package com.kolu.jobappbackend.repo;
+package com.kolu.jobappbackend.job.repo;
 
 
-import com.kolu.jobappbackend.model.JobPost;
+import com.kolu.jobappbackend.job.model.JobPost;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
-package com.kolu.jobappbackend.controller;
+package com.kolu.jobappbackend.job.controller;
 
-import com.kolu.jobappbackend.model.JobPost;
-import com.kolu.jobappbackend.service.JobService;
+import com.kolu.jobappbackend.job.model.JobPost;
+import com.kolu.jobappbackend.job.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -10,7 +10,7 @@ public class JobRestController {
     @Autowired
     private JobService jobService;
 
-    @GetMapping("/jobPosts")
+    @GetMapping("/jobPost/allJob")
     public List<JobPost> getAllJobPosts() {
         return jobService.getAllJobs();
     }
@@ -31,7 +31,7 @@ public class JobRestController {
         return jobService.getJob(jobPost.getPostId());
     }
 
-    @PutMapping("/jobPost")
+    @PutMapping("/jobPost/update")
     public JobPost updateJobPost(@RequestBody JobPost jobPost){
         jobService.updateJobPost(jobPost);
         return jobService.getJob(jobPost.getPostId());

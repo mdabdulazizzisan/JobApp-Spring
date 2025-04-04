@@ -1,4 +1,4 @@
-package com.kolu.jobappbackend.model;
+package com.kolu.jobappbackend.job.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
