@@ -2,20 +2,34 @@ package com.kolu.jobappbackend.user;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.impl.DefaultClaims;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
-import java.security.PublicKey;
+import java.util.Map;
 import java.util.function.Function;
 
 @Service
 @RequiredArgsConstructor
 public class JwtService {
     private static final String KEY = "kolu";
+
+    public String generateToken(
+            String username,
+            Map<String, Object> extraClaims
+    ) {
+        return Jwts.builder()
+                .claims(extraClaims)
+                .subject(username)
+                .signWith(getKey())
+                .compact();
+    }
+
+    public String generateToken(String username) {
+        return generateToken(username, Map.of());
+    }
 
     public String extractUsername(String jwt) {
         return extractClaim(jwt, Claims::getSubject);
@@ -33,7 +47,6 @@ public class JwtService {
                 .build()
                 .parseSignedClaims(jwt)
                 .getPayload();
-
     }
 
     private SecretKey getKey() {
