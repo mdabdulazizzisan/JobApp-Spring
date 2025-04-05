@@ -23,7 +23,10 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authManager;
 
-    public AuthResponse registerUser(RegisterRequest request) {
+    public AuthResponse registerUser(
+            RegisterRequest request,
+            Roles role
+    ) {
         var user = userRepo.findByEmail(request.email());
 
         if (user.isPresent()) {
@@ -37,7 +40,7 @@ public class UserService {
                         .lastname(request.lastname())
                         .email(request.email())
                         .password(passwordEncoder.encode(request.password()))
-                        .roles(Roles.USER)
+                        .role(role)
                         .build()
         );
 

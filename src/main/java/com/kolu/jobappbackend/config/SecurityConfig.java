@@ -1,6 +1,7 @@
 package com.kolu.jobappbackend.config;
 
 import com.kolu.jobappbackend.user.JwtFilter;
+import com.kolu.jobappbackend.user.model.Roles;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +25,8 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable()) //disable csrf
                 .authorizeHttpRequests(auth ->
                         auth
-                                .requestMatchers("/auth/**").permitAll()
+                                .requestMatchers("/addJob", "/jobPost/allJob", "/jobPost/keyword/**").hasAuthority(Roles.EMPLOYER.name())
+                                .requestMatchers("/auth/**", "/loadJobs").permitAll()
                                 .anyRequest().authenticated()
                         
                 )

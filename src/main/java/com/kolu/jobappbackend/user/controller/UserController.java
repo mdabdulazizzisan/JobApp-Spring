@@ -3,6 +3,7 @@ package com.kolu.jobappbackend.user.controller;
 import com.kolu.jobappbackend.user.model.AuthResponse;
 import com.kolu.jobappbackend.user.model.LoginRequest;
 import com.kolu.jobappbackend.user.model.RegisterRequest;
+import com.kolu.jobappbackend.user.model.Roles;
 import com.kolu.jobappbackend.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -30,8 +31,22 @@ public class UserController {
             @RequestBody
             RegisterRequest request
     ) {
-        return ResponseEntity.ok(userService.registerUser(request));
+        return ResponseEntity.ok(userService.registerUser(request, Roles.USER));
     }
 
+    @PostMapping("auth/admin/login")
+    public ResponseEntity<AuthResponse> loginAdmin(
+            @RequestBody
+            LoginRequest request
+    ) {
+        return ResponseEntity.ok(userService.loginUser(request));
+    }
 
+    @PostMapping("auth/admin/register")
+    public ResponseEntity<AuthResponse> registerAdmin(
+            @RequestBody
+            RegisterRequest request
+    ) {
+        return ResponseEntity.ok(userService.registerUser(request, Roles.EMPLOYER));
+    }
 }
