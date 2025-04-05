@@ -3,11 +3,11 @@ GET localhost:8080/loadJobs
 
 ### GET all jobs
 GET localhost:8080/jobPost/allJob
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Mzc3MjUyMywiZXhwIjoxNzQzNzczMTIzfQ.28IkZer3s7Ew_aWUcjahjG-Z-LXWja4lkr5aELum5wsuaaSEJRz61i9JmGoMkI34u3A7ZbHyP05VG4121mysgQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huLmdvb0BleGFtcGxlLmNvbSIsImlhdCI6MTc0MzgxNjA2NSwiZXhwIjoxNzQzODE2NjY1fQ.JCWFa3wMaowco8N3BdUW5D4y-kNkArKrvTHkuI5IgkPJqxDJiD71gvpg0cEHyzLUluUBBUW7MWNpxdJo4mAdig
 
 ### GET job by ID
 GET localhost:8080/jobPost/6
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0Mzc3MjUyMywiZXhwIjoxNzQzNzczMTIzfQ.28IkZer3s7Ew_aWUcjahjG-Z-LXWja4lkr5aELum5wsuaaSEJRz61i9JmGoMkI34u3A7ZbHyP05VG4121mysgQ
+Authorization: Bearer
 
 ### GET job by keyword in title or description
 GET localhost:8080/jobPost/keyword/Software
@@ -18,10 +18,12 @@ GET localhost:8080/jobPost/keyword/Developer
 ### Post job
 POST localhost:8080/addJob
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huLmdvb0BleGFtcGxlLmNvbSIsImlhdCI6MTc0MzgxMjIzMiwiZXhwIjoxNzQzODEyODMyfQ.KbIOV8hhS31lAJnMoFyCppRQZpLhEvMIO-TlFijIZ_wi9bex-7pUk4IGVZysV5TdWRyCdnVpjA712i3v9o8WNw
+
 
 {
   "postId": 11,
-  "postProfile": "Bangi Developer",
+  "postProfile": "Deshal Developer",
   "postDesc": "Develop server-side logic",
   "reqExperience": 3,
   "postTechStack": [

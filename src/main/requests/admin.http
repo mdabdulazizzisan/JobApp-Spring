@@ -1,0 +1,20 @@
+### Register User
+POST localhost:8080/auth/admin/register
+Content-Type: application/json
+
+{
+  "firstname": "John",
+  "lastname": "Doe",
+  "email": "john.goo@example.com",
+  "password": "securePassword123"
+}
+###
+
+### Login User
+POST localhost:8080/auth/admin/login
+Content-Type: application/json
+
+{
+  "email": "john.goo@example.com",
+  "password": "securePassword123"
+}
